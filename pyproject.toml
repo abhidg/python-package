@@ -1,0 +1,29 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "sample"
+version = "0.1.0"
+description = "Sample Python package with a command-line script"
+authors = [{name = "Abhishek Dasgupta", email = "abhishek.dasgupta@dtc.ox.ac.uk"}]
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+readme = "README.md"
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+dependencies = [
+  "requests>=2",
+  "fastjsonschema>=2.16",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest"
+]
+
+[project.urls]
+Home = "https://github.com/abhidg/python-package"
+
+[project.scripts]
+sample = "sample:main"
